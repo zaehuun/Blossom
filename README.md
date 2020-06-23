@@ -1,4 +1,2 @@
 # 
-Spring :)
-
-Servlet - JSP - Spring or AWS
+Servlet -> JSP -> Spring or AWS
