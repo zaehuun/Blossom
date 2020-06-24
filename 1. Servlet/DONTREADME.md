@@ -27,24 +27,17 @@
 ※초기 설정과 종료 작업이 필요 없다면 init() destroy() 생략 가능  
 ---------------------------------------------------------------------
 서블릿을 맵핑할 때 해당 프로젝트의 web.xml 파일에  
-  <servlet> <!-- 브라우저에서 요청하는 매핑 이름에 대해 실제로 실행하는 서블릿 클래스를 설정하는 태그 -->  
-  	<servlet-name>aaa</servlet-name> <!-- 아래 servlet-mapping 태그의 servlet-name 태그와 값이 동일 -->   
-  	<servlet-class>servlet2.ex.FirstServlet</servlet-class> <!--  브라우저에서 요청하는 매핑 이름에 대해 실제로 기능을 수행하는 서블릿 클래스 설정 -->  
-  </servlet>  
-  <servlet-mapping>  
-  	<servlet-name>aaa</servlet-name> <!-- 매핑 이름으로 요청 시 값이 같은 servlet 태그 안의 servlet-name 태그와 연결 -->  
-  	<url-pattern>/first</url-pattern> <!-- 브라우저에서 servlet2.ex.FirstServlet을 요청하는 논리적인 서블릿 이름 -->  
-  </servlet-mapping>  
+  ![image](https://user-images.githubusercontent.com/51132077/85551596-1cd29d00-b65d-11ea-8c3f-880e533e14a8.png)
+
 해당 코드를 추가해서 서블릿을 맵핑시킬 수 있음  
-이렇게 하면 http://localhost:8080/servlet2/servlet2.ex.FirstServlet을  http://localhost:8080/servlet2/first로 호출할 수 있음  
+이렇게 하면 http://localhost:8080/servlet2/servlet2.ex.FirstServlet 을  http://localhost:8080/servlet2/first 로 호출할 수 있음  
 **사용이유?**  
 아무래도 맵핑 전 상태처럼 클래스 이름이 다 노출된다면 이름만 보고 해당 클래스의 역할이 뭔 지를 유추해서 악용될 위험이 있으니 맵핑을 이용하여 숨김  
 
 근데 클래스마다 web.xml에 저렇게 코드로 맵핑하는 건 너무 귀찮음  
-@WebServlet("/third")  
-public class ThirdServlet extends HttpServlet { ~~ }  
-  
-web.xml에 맵핑하지 않고 해당 클래스 머리 위에 저렇게 직접 맵핑을 시킬 수 있음. **어노테이션**이라고도 부르고 **애너테이션**이라고도 부름.  
+![image](https://user-images.githubusercontent.com/51132077/85551928-72a74500-b65d-11ea-9846-6dad1d465aed.png)
+
+web.xml에 맵핑하지 않고 위 사진처럼 해당 클래스 머리 위에 저렇게 직접 맵핑을 시킬 수 있음. **어노테이션**이라고도 부르고 **애너테이션**이라고도 부름.  
 나는 어노테이션이 편하다.  
 아무 클래서 머리 위에 저렇게 쓴다고 해서 맵핑이 되는 게 아니라 HttpServlet을 상속 받아야 맵핑이 된다!..  
 
