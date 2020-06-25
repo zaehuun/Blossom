@@ -56,8 +56,8 @@ web.xml에 맵핑하지 않고 위 사진처럼 해당 클래스 머리 위에 �
 즉, 서블릿 입장에서는 **클라이언트가 보낸 데이터들은 HttpServletRequest**에 담긴 상태로 받고, **요청에 대한 응답에 관한 데이터들은 HttpServletResponse**에 담아 클라이언트에게 보낸다.  
 
 클라이언트가 보낸 데이터들은 input 태그의 name 속성 값과 쌍으로 전송 되는데  
-String getParameter(String name) : name의 값을 알고 있을 때 그리고 name에 대한 전송된 값을 받아오는 데 사용  
-String getParameterValues(String name) : 같은 name에 대해 여러 개의 값을 얻을 때 사용  
-Enumeration getParameterNames() : name 값을 모를 때 사용  
+-**String getParameter(String name)** : name의 값을 알고 있을 때 그리고 name에 대한 전송된 값을 받아오는 데 사용  
+-**String getParameterValues(String name)** : 같은 name에 대해 여러 개의 값을 얻을 때 사용  
+-**Enumeration getParameterNames()** : name 값을 모를 때 사용  
 서블릿은 위 HttpServletRequest의 메서드를 이용하여 데이터들을 확인할 수 있다.  
   
