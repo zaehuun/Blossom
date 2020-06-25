@@ -59,7 +59,7 @@ public class calc extends HttpServlet {
 		pw.print("<option value='pound'>pound</option>");
 		pw.print("</select>");
 		pw.print("<input type='hidden' name='command' value='calculate'>");
-		pw.print("<input type='submit' name='calc!'");
+		pw.print("<input type='submit' name='calc!'>");
 		pw.print("</body></html>");
 		pw.close();
 		
