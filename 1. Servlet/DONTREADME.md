@@ -60,4 +60,20 @@ web.xml에 맵핑하지 않고 위 사진처럼 해당 클래스 머리 위에 �
 -**String getParameterValues(String name)** : 같은 name에 대해 여러 개의 값을 얻을 때 사용  
 -**Enumeration getParameterNames()** : name 값을 모를 때 사용  
 서블릿은 위 HttpServletRequest의 메서드를 이용하여 데이터들을 확인할 수 있다.  
+***
+**servlet6 내용**  
+---------------------------------------------------------------------  
+
+이전까지는 form 태그의 속성 중 method 속성을 get으로만 사용하여 서블릿의 doGet() 메서드를 호출하였다.  
+하지만 속성을 get으로 사용하면 사용자가 입력한 데이터들이 url에 다 노출이 되어서 로그인 하는 경우엔 아이디와 비밀번호가 공개된다.  
+![image](https://user-images.githubusercontent.com/51132077/85785828-a3be6d00-b764-11ea-9e04-3aedf3bc439f.png)
+다음과 같이 아이디와 비밀번호를 입력하여 전송을 하면  
+![image](https://user-images.githubusercontent.com/51132077/85785995-cbadd080-b764-11ea-8b16-ee8cd73776d7.png)
+보이는 것처럼 내가 입력한 아이디와 비밀번호가 보이게 된다.  
+
+따라서 정보의 보안이 중요한 경우 get 방식보다는 **post 방식**을 사용하여 정보를 숨길 수 있다.  
+method 속성을 post로 변경하고 아이디와 비밀번호를 입력하면  
+![image](https://user-images.githubusercontent.com/51132077/85786470-41b23780-b765-11ea-99c3-49110c31a8ee.png)
+위 처럼 get 방식과는 다르게 정보를 숨길 수 있고, doPost() 메서드를 호출하게 된다.  
   
+ ***※get과 post는 다 많이 사용되니 상황에 맞게 사용하면 된다..!***
