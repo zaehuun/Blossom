@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		function valid_check(){
+			var frmlogin = document.frmlogin; //form 태그의 name 속성으로 form 태그 객체를 받아 옴
+			var id = frmlogin.id.value;
+			var pw = frmlogin.pw.value;
+			
+			if((id.length == 0 || id == "") || (pw.length == 0 || pw == ""))
+				alert("아이디와 비밀번호는 필수야 제발 입력 좀 해!");
+			else{
+				frmlogin.method = "post";
+				frmlogin.action = "login"; 
+				frmlogin.submit(); //자바스크립트에서 서블릿으로 전송
+			}
+		}
+	</script>
+	<title>Login</title>
+</head>
+<body>
+	<form name="frmlogin" method="post" action="login" encType="UTF-8">
+		ID : <input type="text" name="id"><br>
+		PW : <input type="password" name="pw"><br>
+		<input type="hidden" name="address" value="Google">
+		<input type="button" onClick="valid_check()" value="login"> 
+		<input type="reset" value="reset">
+		
+	</form>
+</body>
+</html>
