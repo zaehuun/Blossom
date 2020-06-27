@@ -68,7 +68,7 @@ public static void main(String args[]) {
 **의존성을 낮춤으로써 유지 보수를 간결하게 만들어준다.**
 ***
 ## **spring2 내용**
-setter를 이용한 의존성 주입   
+**setter**를 이용한 의존성 주입   
 ```
 public class PersonServiceImpl implements PersonService {
 	private String name;
@@ -87,4 +87,30 @@ public class PersonServiceImpl implements PersonService {
 ![image](https://user-images.githubusercontent.com/51132077/85930935-3e50b480-b8fb-11ea-8343-64d22abfc9c3.png)      
 그럼 setter를 이용해 xml 파일에서 <value> 태그로 설정한 값을 name 속성에 주입하게 된다. age 속성은 setter가 없으므로 빈이 생성되더라도 값이 초기화 되지 않는다.   
 **※setter 함수의 이름은 이유는 모르겠으나 꼭 set + 속성이름이어야 한다. 왠지 알아봐야겠다.**   
-
+***
+## **spring3 내용**
+**생성자**를 이용한 의존성 주입
+```
+	public class PersonServiceImpl implements PersonService {
+	private String name;
+	private int age;
+	
+	public PersonServiceImpl(String name) {
+		this.name = name;
+	}
+	
+	public PersonServiceImpl(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	@Override
+	public void say() {
+		System.out.println("이름: " + name);
+		System.out.println("나이: " + age);
+	}
+}
+```
+spring2와는 다르게 생성자를 이용하여 의존성을 주입하는 예제이다. 생성자를 사용하는 만큼 xml 파일도 아래와 같이 수정한다.   
+![image](https://user-images.githubusercontent.com/51132077/85931072-6391f280-b8fc-11ea-8e95-35016738cc03.png)  
+첫 번째 빈은 인자가 한 개인 생성자를 이용하여 name 속성에 <value> 태그의 값이 주입되고, 두 번째 빈은 인자가 두 개인 생성자를 이용하여 name과 age 속성을 초기화 시킨다.   
