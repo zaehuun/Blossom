@@ -66,4 +66,25 @@ public static void main(String args[]) {
 ```
 따라서 B 객체말고 C 객체를 사용하고 싶어진다면 코드 전체를 돌면서 수정 할 필요 없이 변수 b에 들어갈 객체를 C로만 바꾸어 주면 변경이 끝난다.   
 **의존성을 낮춤으로써 유지 보수를 간결하게 만들어준다.**
+***
+## **spring2 내용**
+setter를 이용한 의존성 주입   
+```
+public class PersonServiceImpl implements PersonService {
+	private String name;
+	private int age;
+	public void setName(String name) { //setter
+		this.name = name;
+	}
+	@Override
+	public void say() {
+		System.out.println("이름: " + name);
+		System.out.println("나이: " + age);
+	}
+}
+```
+위치럼 setName이라는 setter 함수를 만들어 놓고 person.xml이라는 xml 파일에서 아래와 같이 입력한다.   
+![image](https://user-images.githubusercontent.com/51132077/85930935-3e50b480-b8fb-11ea-8343-64d22abfc9c3.png)      
+그럼 setter를 이용해 xml 파일에서 <value> 태그로 설정한 값을 name 속성에 주입하게 된다. age 속성은 setter가 없으므로 빈이 생성되더라도 값이 초기화 되지 않는다.   
+**※setter 함수의 이름은 이유는 모르겠으나 꼭 set + 속성이름이어야 한다. 왠지 알아봐야겠다.**   
 
