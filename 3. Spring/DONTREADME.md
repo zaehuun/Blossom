@@ -114,3 +114,8 @@ public class PersonServiceImpl implements PersonService {
 spring2와는 다르게 생성자를 이용하여 의존성을 주입하는 예제이다. 생성자를 사용하는 만큼 xml 파일도 아래와 같이 수정한다.   
 ![image](https://user-images.githubusercontent.com/51132077/85931072-6391f280-b8fc-11ea-8e95-35016738cc03.png)  
 첫 번째 빈은 인자가 한 개인 생성자를 이용하여 name 속성에 <value> 태그의 값이 주입되고, 두 번째 빈은 인자가 두 개인 생성자를 이용하여 name과 age 속성을 초기화 시킨다.   
+***
+## **spring4 내용**
+**AOP : 관점 지향 프로그래밍** (한국말로 번역을 해서 그런가 뭔가 뜻이 어색하다.)   
+**https://jojoldu.tistory.com/71**   
+진짜 여기만한 곳이 없다
