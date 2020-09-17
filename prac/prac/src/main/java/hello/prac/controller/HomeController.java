@@ -1,9 +1,13 @@
 package hello.prac.controller;
 
+import hello.prac.Domain.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
+@RestController
 public class HomeController {
 
     @RequestMapping("/")
@@ -11,11 +15,10 @@ public class HomeController {
         return "home";
     }
 
-    @PostMapping("/members/new")
-    @ResponseBody
-    public MemberForm newmapping(@ModelAttribute MemberForm memberForm){
-        System.out.println(memberForm.getName());
-
-        return memberForm;
+    @RequestMapping("/list")
+    public List<Student> studentList(){
+        System.out.println("list");
+        List<Student> students = null;
+        return students;
     }
 }
