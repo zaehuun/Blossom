@@ -1,0 +1,12 @@
+api/api/controller/HelloController.java
+ api.api.controller.HelloController
+ api.api.controller.HelloController$Hello
+api/api/repo/UserJpaRepo.java
+ api.api.repo.UserJpaRepo
+api/api/model/User.java
+ api.api.model.User
+ api.api.model.User$UserBuilder
+api/api/controller/UserController.java
+ api.api.controller.UserController
+api/api/ApiApplication.java
+ api.api.ApiApplication
