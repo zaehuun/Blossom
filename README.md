@@ -16,4 +16,4 @@
    
       
       
-spring.jpa.hibernate.ddl-auto=create 하면 entity 이름에 맞는 테이블이 없다면 자동 생성
+spring.jpa.hibernate.ddl-auto=create 하면 entity 이름에 맞는 테이블이 없다면 자동 생성 
