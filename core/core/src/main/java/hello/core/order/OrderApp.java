@@ -14,6 +14,8 @@ public class OrderApp {
         //AppConfig appConfig = new AppConfig();
         //MemberService memberService = appConfig.memberService();
         //OrderService orderService = appConfig.orderService();
+        
+        //BeanFactory가 더 상위 개념
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
