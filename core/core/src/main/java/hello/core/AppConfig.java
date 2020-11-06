@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 //공연 기획자 느낌
+//spring이 싱글톤 객체로 만들어서 관리 함
 @Configuration
 public class AppConfig {
 
